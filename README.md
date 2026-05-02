@@ -1,7 +1,6 @@
 # Global Sustainable Energy & SDG 7 Progress Dashboard
-### Part of the Data Mining & Analytics Portfolio
 
-[![Streamlit App]([https://static.streamlit.io/badge_streamlit.svg)](ADD_YOUR_STREAMLIT_LINK_HERE](https://life-expectancy-dashboard-lzo8leacaaruw42k5kfbkn.streamlit.app/))
+[![Streamlit App](https://static.streamlit.io/badge_streamlit.svg)](https://life-expectancy-dashboard-lzo8leacaaruw42k5kfbkn.streamlit.app/)
 
 ## 🧭 Project Context & Problem Statement
 The global energy sector is at a critical juncture. While the United Nations Sustainable Development Goal 7 (SDG 7) calls for affordable, reliable, and sustainable energy for all by 2030, progress remains unevenly distributed. 
@@ -14,7 +13,7 @@ This dashboard serves as a **prescriptive analytics tool** designed to monitor e
 * **Erden Jhed Teope**
 
 ## 📊 Key Analytical Insights
-The dashboard is built to visualize four interconnected pillars of energy analytics identified in our research[cite: 3]:
+The dashboard is built to visualize four interconnected pillars of energy analytics identified in our research:
 
 1.  **The Decarbonization Gap:** Nations in the "Very High" emission category average significantly lower renewable energy shares (~22-26%) compared to lower-tier emitters.
 2.  **The Final Mile of Equity:** Geographic analysis reveals persistent energy poverty clusters, particularly in Sub-Saharan Africa, where electricity access remains below the critical 60% threshold.
