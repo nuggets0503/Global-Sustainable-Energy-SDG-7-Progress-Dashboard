@@ -135,12 +135,42 @@ st.markdown("---")
 st.subheader("Global Electricity Access Distribution")
 try:
     geo_url = "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/world-countries.json"
+    geo_json_data = requests.get(geo_url).json()
+    
+    # Initialize Map with Dark Matter tiles
     m = folium.Map(location=[20, 0], zoom_start=1.8, tiles="CartoDB dark_matter")
+    
+    # CSS Injection to fix Legend Contrast (Turning labels white and caption to Brand Mint)
+    m.get_root().header.add_child(folium.Element("""
+        <style>
+            .legend text { fill: #E2E8F0 !important; font-size: 13px !important; }
+            .legend .caption { fill: #6FCF97 !important; font-weight: bold !important; }
+        </style>
+    """))
+
+    # Choropleth Layer
     folium.Choropleth(
-        geo_data=requests.get(geo_url).json(), data=filtered_df,
-        columns=["Entity", "electricity_access"], key_on="feature.properties.name",
-        fill_color="YlGnBu", fill_opacity=0.7, line_opacity=0.2, legend_name="Access %"
+        geo_data=geo_json_data, 
+        data=filtered_df,
+        columns=["Entity", "electricity_access"], 
+        key_on="feature.properties.name",
+        fill_color="YlGnBu", 
+        fill_opacity=0.7, 
+        line_opacity=0.2, 
+        legend_name="Access %"
     ).add_to(m)
+
+    # Transparent Tooltip Layer for high contrast "number text" on zoom
+    folium.GeoJson(
+        geo_json_data,
+        style_function=lambda x: {'fillColor': 'transparent', 'color': 'transparent', 'weight': 0},
+        tooltip=folium.GeoJsonTooltip(
+            fields=['name'],
+            aliases=['Country:'],
+            style="background-color: #1E252B; color: #6FCF97; font-family: Inter, sans-serif; font-size: 14px; border: 1px solid #2D3748; padding: 10px; border-radius: 5px;"
+        )
+    ).add_to(m)
+
     st_folium(m, height=500, use_container_width=True)
 except:
     st.info("Geographic data is loading...")
