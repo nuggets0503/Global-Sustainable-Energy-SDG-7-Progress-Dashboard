@@ -7,6 +7,9 @@ import folium
 from streamlit_folium import st_folium
 import requests
 
+try:
+    st.image("Banner.jpg", use_container_width=True)
+
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Global Sustainable Energy Dashboard", layout="wide")
 
