@@ -9,6 +9,9 @@ import requests
 
 try:
     st.image("Banner.jpg", use_container_width=True)
+except FileNotFoundError:
+    # Fallback if the image is missing during local testing
+    st.info("Banner")
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Global Sustainable Energy Dashboard", layout="wide")
