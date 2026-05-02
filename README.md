@@ -1,6 +1,6 @@
 # Global Sustainable Energy & SDG 7 Progress Dashboard
 
-[![Streamlit App](https://static.streamlit.io/badge_streamlit.svg)](https://life-expectancy-dashboard-lzo8leacaaruw42k5kfbkn.streamlit.app/)
+[Visit the the Dashboard by Clicking Here!](https://static.streamlit.io/badge_streamlit.svg)](https://life-expectancy-dashboard-lzo8leacaaruw42k5kfbkn.streamlit.app/)
 
 ## 🧭 Project Context & Problem Statement
 The global energy sector is at a critical juncture. While the United Nations Sustainable Development Goal 7 (SDG 7) calls for affordable, reliable, and sustainable energy for all by 2030, progress remains unevenly distributed. 
